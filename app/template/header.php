@@ -12,7 +12,7 @@
     <title>Starter Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://localhost/automationAppointments/app/assets/css/bootstrap.min.css" rel="stylesheet">
 
 </head>
 
@@ -31,9 +31,9 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li class="active"><a href="http://localhost/automationAppointments/app/index.php">Home</a></li>
+                <li><a href="http://localhost/automationAppointments/app/views/company/list-company.php">Company</a></li>
+                <li><a href="#contact">Client</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>

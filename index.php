@@ -6,3 +6,4 @@
  * Time: 21:26
  */
 header('Location:app/index.php');
+echo phpinfo();

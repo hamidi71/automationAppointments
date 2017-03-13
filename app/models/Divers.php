@@ -1,5 +1,6 @@
 <?php
-require_once '../config/Database.php';
+//echo dirname(__DIR__);C:\xampp\htdocs\automationAppointments\app
+require_once dirname(__DIR__).'/config/Database.php';
 /**
  * Created by IntelliJ IDEA.
  * User: Baddi
@@ -20,4 +21,10 @@ class Divers
         $fetchCities = $selectCities->fetchAll(PDO::FETCH_ASSOC);
         return $fetchCities;
     }
+    public function findAllCategories(){
+      $selctCategories =$this->config->db->prepare('select * from categories' );
+        $selctCategories->execute();
+        return $selctCategories->fetchAll(PDO::FETCH_ASSOC);
+    }
+    
 }
