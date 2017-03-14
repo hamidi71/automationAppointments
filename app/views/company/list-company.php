@@ -2,7 +2,6 @@
 require_once  $_SERVER['DOCUMENT_ROOT'].'/automationAppointments/app/template/header.php';
 require_once  $_SERVER['DOCUMENT_ROOT'].'/automationAppointments/app/controllers/CompanyController.php';
 $companyController= new CompanyController();
-
 ?>
 <table class="table">
     <?php foreach ($companyController->vindAllCompany() as $value):?>
