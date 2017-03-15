@@ -4,7 +4,7 @@ require_once  $_SERVER['DOCUMENT_ROOT'].'/automationAppointments/app/controllers
 $companyController= new CompanyController();
 ?>
 <table class="table">
-    <?php foreach ($companyController->vindAllCompany() as $value):?>
+    <?php foreach ($companyController->findAllCompany() as $value):?>
     <tr>
         <td><?= $value['company']?></td>
         <td><?= $value['adresse']?></td>
@@ -14,8 +14,8 @@ $companyController= new CompanyController();
         <td><?= $value['city']?></td>
 
         <td>
-            <div> <a href="#" class="btn btn-info">See Profile</a></div>
-            <div> <a href="#" class="btn btn-info">Make Appointment</a></div>
+            <div> <a href="http://localhost/automationAppointments/app/views/company/profile.php?id=<?=$value['id']?>" class="btn btn-success">See Profile</a></div>
+            <div> <a href="http://localhost/automationAppointments/app/views/company/appointment.php?id=<?=$value['id']?>" class="btn btn-success">Make Appointment</a></div>
         </td>
 
 

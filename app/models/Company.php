@@ -12,6 +12,11 @@ class Company{
     public function __construct() {
         $this->config=new Database();
     }
+    private function getCalledMethod($function){
+        $methode=explode('::',$function);
+        return $methode[1];
+        echo $this->getCalledMethod(__METHOD__);
+    }
     public function findAllCompagny(){
         $selectCompany= $this->config->db->prepare('select c.id,c.name as company,c.adresse,c.username,
         c.phone,cat.name as category,cit.name as city from company c,categories cat,cities cit 
@@ -20,7 +25,7 @@ class Company{
         return $selectCompany->fetchAll(PDO::FETCH_ASSOC);
 
     }
-    public function findOneCompany($id=false){
+    public function findOneCompany($id=false){       
         $selectCompany=$this->config->db->prepare('select * from company WHERE id=:idParam');
         $selectCompany->bindParam(':idParam',$id);
         $selectCompany->execute();

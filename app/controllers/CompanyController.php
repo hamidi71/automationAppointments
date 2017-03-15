@@ -15,7 +15,11 @@ require_once dirname(__DIR__).'/models/Divers.php';
             $this->modelCompany=new Company();
             $this->modelDivers= new Divers();
         }
-        public function vindAllCompany(){
+        public function findAllCompany(){
             return $this->modelCompany->findAllCompagny();            
+        }
+        public function findOneCompany($id){
+            return $this->modelCompany->findOneCompany($id);          
+            
         }
     }
