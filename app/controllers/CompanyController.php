@@ -1,6 +1,6 @@
 <?php
-require_once  dirname(__DIR__).'/models/Company.php';
-require_once dirname(__DIR__).'/models/Divers.php';
+require_once  dirname(__DIR__).'/models/CompanyModel.php';
+require_once dirname(__DIR__).'/models/DiversModel.php';
 /**
  * Created by IntelliJ IDEA.
  * User: Baddi
@@ -15,11 +15,16 @@ require_once dirname(__DIR__).'/models/Divers.php';
             $this->modelCompany=new Company();
             $this->modelDivers= new Divers();
         }
+        
         public function findAllCompany(){
             return $this->modelCompany->findAllCompagny();            
         }
+        
         public function findOneCompany($id){
-            return $this->modelCompany->findOneCompany($id);          
-            
+            return $this->modelCompany->findOneCompany($id);      
+        }
+        
+        public function findClientByIdCompany($idCompany=false){
+            return $this->modelCompany->findClientByIdCompany($idCompany);
         }
     }

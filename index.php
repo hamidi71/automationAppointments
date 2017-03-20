@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by IntelliJ IDEA.
- * User: Baddi
- * Date: 6-3-2017
- * Time: 21:26
- */
+
 
 //$db = new PDO('mysql:host=localhost;dbname=db_appointement','root','');
 //$selectCompany= $db->prepare('select c.id,c.name as company,c.adresse,c.username,
