@@ -27,4 +27,12 @@ require_once dirname(__DIR__).'/models/DiversModel.php';
         public function findClientByIdCompany($idCompany=false){
             return $this->modelCompany->findClientByIdCompany($idCompany);
         }
+        
+        public function findDisponibiliteByIdCompany($idCompany=false){
+            return $this->modelCompany->findDisponibiliteByIdCompany($idCompany);
+        }
+
+        public function getTimes(){
+            return $this->modelDivers->findAllTimes();
+        }
     }

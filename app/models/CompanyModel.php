@@ -49,4 +49,13 @@ class Company{
         $selectClient->execute();
         return $selectClient->fetchAll(PDO::FETCH_ASSOC);
     }
+    public function findDisponibiliteByIdCompany($idCompany){
+        $query='select * from disponibilites where company_id=:idparam';
+        $selectDis=$this->config->db->prepare($query);
+        $selectDis->bindParam(':idparam',$idCompany);
+        $selectDis->execute();
+        return $selectDis->fetch(PDO::FETCH_ASSOC);
+        
+
+    }
 }

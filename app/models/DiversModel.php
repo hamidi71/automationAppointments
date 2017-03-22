@@ -27,4 +27,11 @@ class Divers
         return $selctCategories->fetchAll(PDO::FETCH_ASSOC);
     }
     
+    public function findAllTimes(){
+        $selctTimes =$this->config->db->prepare('select du,au from times' );
+        $selctTimes->execute();
+        return  $selctTimes->fetchAll(PDO::FETCH_ASSOC); 
+        
+    }
+    
 }

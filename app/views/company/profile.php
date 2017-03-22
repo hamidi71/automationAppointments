@@ -57,8 +57,42 @@ if(isset($_GET['id'])):$id=$_GET['id'];
         </tr>
     <?php  endforeach; ?>
     </table>
-    <center><a href="#" class="btn btn-warning"> Beheer uw disponibilitée</a></center>
-<?php
+    <?php $disponibilite=$companyController->findDisponibiliteByIdCompany($company['id']);
+        if(empty($disponibilite)):
+    ?>
+    <center><button id="dispId" class="btn btn-warning"> Beheer uw disponibilitée</button></center>
+
+<?php require_once  $_SERVER['DOCUMENT_ROOT'].'/automationAppointments/app/views/disponibilite/addDisponibilite.php';
+        else: ?>
+     <table>
+        <tr>
+            <td><?=$disponibilite['dayMonday'] ?></td>
+            <td><?=$disponibilite['duMonday'] ?></td>
+            <td><?=$disponibilite['auMonday'] ?></td>
+        </tr>
+         <tr>
+             <td><?=$disponibilite['dayTuesday'] ?></td>
+             <td><?=$disponibilite['duTuesday'] ?></td>
+             <td><?=$disponibilite['auTuesday'] ?></td>
+         </tr>
+         <tr>
+             <td><?=$disponibilite['dayWednesday'] ?></td>
+             <td><?=$disponibilite['duWednesday'] ?></td>
+             <td><?=$disponibilite['auWednesday'] ?></td>
+         </tr>
+         <tr>
+             <td><?=$disponibilite['dayThursday'] ?></td>
+             <td><?=$disponibilite['duThursday'] ?></td>
+             <td><?=$disponibilite['auThursday'] ?></td>
+         </tr>
+        
+         <tr>
+             <td><?=$disponibilite['dayFriday'] ?></td>
+             <td><?=$disponibilite['duFriday'] ?></td>
+             <td><?=$disponibilite['auFriday'] ?></td>
+         </tr>        
+     </table>
+<?php endif;
     else:
     ?>
         <span class="alert-danger">U moet een bedrijf kiezen</span>
